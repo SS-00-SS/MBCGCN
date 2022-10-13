@@ -1,0 +1,41 @@
+########################
+environment: Python 3.6
+             TensorFlow 1.14. 
+#########################
+
+
+Dataset:Beibei
+Pre-training on GCN:
+python GCN.py --data_path Data/
+              --dataset 'view'
+              --pretrain 0
+              --epoch 1000
+              --embed_size 64
+              --layer_size [64,64,64]
+              --batch_size 2048
+              --regs [1e-4]
+              --lr 0.001
+              --model-type 'gcn'
+              --alg_type 'gcn'
+              --adj_type 'pre'
+              --save_flag 1
+
+And then training at the RCGCN:
+python MBCGCN.py --data_path Data/
+                --dataset 'buy'
+                --pretrain 1
+                --epoch 1000
+                --embed_size 64
+                --layer_size [64,64,64]
+                --layer_size2 [64,64,64]
+                --layer_size3 [64,64,64,64]
+                --layer_size4 [64,64,64]
+                --batch_size 2048
+                --regs [1e-4]
+                --lr 0.001
+                --model-type 'mbcgcn'
+                --alg_type 'mbcgcn'
+                --adj_type 'pre'
+                --save_flag 1
+
+
