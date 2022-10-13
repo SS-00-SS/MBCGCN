@@ -4,7 +4,7 @@ environment: Python 3.6
 #########################
 
 
-Dataset:Beibei
+Dataset:tmall
 Pre-training on GCN:
 python GCN.py --data_path Data/
               --dataset 'view'
@@ -29,7 +29,7 @@ python MBCGCN.py --data_path Data/
                 --layer_size [64,64,64]
                 --layer_size2 [64,64,64]
                 --layer_size3 [64,64,64,64]
-                --layer_size4 [64,64,64]
+                --layer_size4 [64,64]
                 --batch_size 2048
                 --regs [1e-4]
                 --lr 0.001
